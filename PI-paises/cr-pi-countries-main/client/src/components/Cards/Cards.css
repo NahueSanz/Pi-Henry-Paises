@@ -1,0 +1,78 @@
+.cardHolder ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .cardHolder li {
+    width: calc(
+      33.33% - 20px
+    ); /* Para un máximo de 3 tarjetas por fila en pantallas más pequeñas */
+  }
+}
+
+.cardHolder li {
+  width: calc(25% - 20px);
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  border: 1px solid white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.cardHolder li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: lightgray;
+}
+
+.cardHolder li img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 10%;
+  border: 2px solid black;
+}
+
+.cardHolder li:hover img {
+  filter: brightness(80%);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.filterSelect {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 42px;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+option {
+  color: #333;
+}
+
+/* Estilos adicionales para mejorar la apariencia de los selectores */
+select {
+  background-color: #f2f2f2;
+  color: #333333;
+  border: 1px solid #cccccc;
+  margin: 5px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #666;
+}

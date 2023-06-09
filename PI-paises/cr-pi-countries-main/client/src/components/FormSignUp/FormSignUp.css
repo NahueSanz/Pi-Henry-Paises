@@ -1,0 +1,40 @@
+.formulariodiv {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.labelText {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.inputform {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.submitButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.conditions {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.condition {
+  color: red;
+}
+
+.condition.valid {
+  color: green;
+}
