@@ -5,14 +5,18 @@ import {
   SORT_BY_POPULATION,
   SET_TOTAL_PAGES,
   SET_CURRENT_PAGE,
+  POST_ACTIVITY,
+  GET_ACTIVITIES,
 } from "./actionsType";
 import axios from "axios";
+
+const URL = "http://localhost:3001/countries/";
 
 export const getCountries = (page, continent) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/countries/all?page=${page}` +
+        `${URL}all?page=${page}` +
           (continent ? `&filters=continent=${continent}` : ``)
       );
       dispatch({ type: GET_COUNTRIES, payload: data.countries });
@@ -33,4 +37,38 @@ export const orderCountry = (order) => {
 
 export const sortByPopulation = (order) => {
   return { type: SORT_BY_POPULATION, payload: order };
+};
+
+export const postActivity = (name, duration, difficulty, countries, season) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(`${URL}activities`, {
+        name: name,
+        duration: duration,
+        difficulty: difficulty,
+        countries: countries,
+        season: season,
+      });
+      dispatch({ type: POST_ACTIVITY, payload: data });
+    } catch (error) {
+      console.log(
+        "Error al enviar los datos de la actividad al servidor",
+        error
+      );
+    }
+  };
+};
+
+export const getActivities = () => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`${URL}/activities`);
+      dispatch({ type: GET_ACTIVITIES, payload: data });
+    } catch (error) {
+      console.log(
+        "Error al mostrar los datos de la actividad al servidor",
+        error
+      );
+    }
+  };
 };

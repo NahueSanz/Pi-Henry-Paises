@@ -5,6 +5,7 @@ import Cards from "./components/Cards/Cards";
 import NavBar from "./components/NavBar/NavBar";
 import CountryDetail from "./components/CountryDetail/CountryDetail";
 import FormActivity from "./components/FormActivity/FormActivity";
+import ShowActivities from "./components/ShowActivities/ShowActivities";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -21,7 +22,8 @@ function App() {
           path="/countries"
           element={<Cards searchResults={searchResults} />}
         />
-        <Route path="/countries/activities" element={<FormActivity />}></Route>
+        <Route path="/countries/activities" element={<FormActivity />} />
+        <Route path="/countries/activities/show" element={<ShowActivities />} />
         <Route path="/countries/detail/:idPais" element={<CountryDetail />} />
       </Routes>
     </div>

@@ -16,22 +16,27 @@ const Navbar = ({ setSearchResults }) => {
     <nav>
       <ul>
         <li>
-          <button className="btnBar">
-            <Link to="/countries">Home</Link>
-          </button>
+          <Link to="/countries">
+            <button className="btnBar">Home</button>
+          </Link>
         </li>
         <li>
-          <button className="btnBar">
-            <Link to="/countries/activities">Actividades</Link>
-          </button>
+          <Link to="/countries/activities">
+            <button className="btnBar">Crear actividad</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/countries/activities/show">
+            <button className="btnBar">Mostrar actividades</button>
+          </Link>
         </li>
         <li>
           <SearchBar setSearchResults={setSearchResults} />
         </li>
         <li>
-          <button className="btnBar">
-            <Link to="/">Log Out</Link>
-          </button>
+          <Link to="/">
+            <button className="btnBar">Log Out</button>
+          </Link>
         </li>
       </ul>
     </nav>

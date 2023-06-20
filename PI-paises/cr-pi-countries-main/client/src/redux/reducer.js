@@ -5,6 +5,8 @@ import {
   SORT_BY_POPULATION,
   SET_TOTAL_PAGES,
   SET_CURRENT_PAGE,
+  POST_ACTIVITY,
+  GET_ACTIVITIES,
 } from "./actionsType";
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
   filteredCountries: [],
   currentPage: 1,
   totalPages: 0,
+  activities: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -73,6 +76,16 @@ const reducer = (state = initialState, action) => {
           ),
         };
       }
+    case POST_ACTIVITY:
+      return {
+        ...state,
+        activities: action.payload,
+      };
+    case GET_ACTIVITIES:
+      return {
+        ...state,
+        activities: action.payload,
+      };
     default:
       return state;
   }
